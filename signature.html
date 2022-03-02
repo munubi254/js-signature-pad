@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signature pad HTML2PDF</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body onselectstart="return false">
+    <div class="d-flex justify-content-center">
+      <div class="col-md-8" style="margin-top: 2%">
+        <div class="col-md-12 d-flex justify-content-center ">
+            <span class="col-md-3 mb-4">YOUR INVOICE</span>
+        </div>
+        <div class="col-md-12">
+            <div id="toPrint" class="col-md-12">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Toothbrush</td>
+                      <td>KES. 180</td>
+                      <td>3</td>
+                      <td>KES. 540</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Toothpaste</td>
+                      <td>KES. 560</td>
+                      <td>1</td>
+                      <td>KES. 560</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Cookies</td>
+                      <td>KES. 120</td>
+                      <td>2</td>
+                      <td>KES. 240</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"></th>
+                      <td></td>
+                      <td></td>
+                      <th class="text-danger">GRAND TOTAL</th>
+                      <td>KES. 1340</td>
+                    </tr>
+                  </tbody>
+                </table>
+              <div class="col-md-12 d-flex justify-content-end">
+                  <div class="col-md-3 d-flex justify-content-center">
+                      <span class=" mb-4">Your Signature</span>
+                  </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end">
+                  <div class="col-md-3 d-flex justify-content-center">
+                      <img id="signature" style="border: 1px solid black;" width="250px" height="100px">
+                  </div>
+              </div>
+              </div>
+          <div class="col-md-12 d-flex justify-content-center ">
+              <span class="col-md-3 mb-4">Sign here</span>
+          </div>
+          <div class="col-md-12 d-flex justify-content-center ">
+              <canvas id="canvas" height="500" width="800" style="border: 1px solid black"></canvas>
+          </div>
+          <div class="col-md-12 d-flex justify-content-around ">
+              <button type="button" style="margin-top: 2%; margin-bottom: 3%" class="btn btn-dark" data-action="action-save">Save</button>
+              <button type="button" style="margin-top: 2%; margin-bottom: 3%" class="btn btn-dark" data-action="action-undo">Undo</button>
+              <button type="button" style="margin-top: 2%; margin-bottom: 3%" class="btn btn-dark" data-action="action-clear">Clear</button>
+              <button type="button" style="margin-top: 2%; margin-bottom: 3%" class="btn btn-dark" data-action="action-pdf">Get PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/signature_pad.umd.js"></script>
+    <script src="js/sign-handler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  </body>
+</html>
